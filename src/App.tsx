@@ -2,16 +2,17 @@ import { Provider } from 'react-redux'
 import './App.css'
 import {store} from './utils/redux/appStore.ts';
 import Header from './components/Header/Header.tsx';
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import SignUp from './components/SignUp/SignUp.tsx';
-import Admin from './components/Admin/Admin.tsx';
-import User from './components/User/User.tsx';
 import './components/Home/home.scss';
-import Invoice from './components/User/Invoice.tsx';
+
+const Management = lazy(()=>import('./components/Admin/Management/Management.tsx'));
+const User = lazy(()=>import('./components/User/User.tsx'));
+const Admin = lazy(() => import('./components/Admin/Admin.tsx'));
+const Invoice = lazy(()=>import('./components/User/Invoice.tsx'));
+const SignUp = lazy(()=>import('./components/SignUp/SignUp.tsx'));
+
 function App() {
-
-
   const AppLayout = () => {
     return (
       <Provider store={store}>
@@ -42,8 +43,8 @@ function App() {
             element: <Admin />,
           },
           {
-            path: "/admin/invoice",
-            element: <User />,
+            path: "/admin/management",
+            element: <Management />,
           },
           {
             path: "/user",

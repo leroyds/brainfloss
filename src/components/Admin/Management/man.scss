@@ -1,0 +1,11 @@
+.mang-user-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mang-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
