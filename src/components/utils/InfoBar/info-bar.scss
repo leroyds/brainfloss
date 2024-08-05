@@ -1,0 +1,14 @@
+.info-bar{
+  display: flex;
+  background-color: aliceblue;
+  width: 80%;
+  padding: 15px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  &__meta{
+    display: flex;
+    gap: 80px;
+
+  }
+}

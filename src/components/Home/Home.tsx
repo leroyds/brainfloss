@@ -5,9 +5,12 @@ import { updateUser } from "../../utils/redux/slice/userSlice";
 import Admin from "../Admin/Admin";
 import Header from "../Header/Header";
 import './home.scss';
+import { useSelector } from "react-redux";
+import User from "../User/User";
 
 const Home = () => {
   const dispatch: AppDispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
 
   useEffect(() => {
@@ -22,9 +25,13 @@ const Home = () => {
 
   return (
     <div>
-      <Header/>
+      <Header fetchAndSetUser={fetchAndSetUser}/>
       <div className="container">
-        <Admin/>
+        {
+          user.role === 'admin' ?
+            <Admin/>
+            :<User/>
+        }
       </div>
     </div>
   );

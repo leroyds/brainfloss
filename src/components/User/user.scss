@@ -1,0 +1,12 @@
+.user{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-row{
+  &.top{
+    display: flex;
+    gap: 20px;
+  }
+}

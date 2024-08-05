@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
-import { useSelector } from "react-redux";
 import './header.scss';
+import { useSelector } from "react-redux";
 
-const Header = () => {
-  const userRole = useSelector((state) => state.user.role);
-
+const Header = ({fetchAndSetUser}) => {
+  const userRole = useSelector((state) => state.user.role)
   return (
     <header>
       <div className="header-right">
@@ -13,7 +12,21 @@ const Header = () => {
             <div>Admin Role Active</div>
             : <div>User Role Active</div>
         }
-        <Button variant="outlined">Toggle User</Button>
+        <Button variant="outlined" onClick={fetchAndSetUser}>Toggle User</Button>
+      </div>
+      <div className="header-left">
+      {
+          userRole === 'admin' ?
+            <>
+              <Button>Dashbord</Button>
+              <Button>User Mangement</Button>
+            </>
+            : 
+            <>
+              <Button>Dashbord</Button>
+              <Button>Invoice</Button>
+            </>
+        }
       </div>
     </header>
   );
