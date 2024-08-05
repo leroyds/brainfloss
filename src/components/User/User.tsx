@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux";
 import Chart from "../Admin/elements/Chart";
 import Card from "../Admin/elements/Card";
 import Notifications from "../utils/Notifications";
 import InfoBar from "../utils/InfoBar/InfoBar";
 import './user.scss';
 import SearchBar from "../utils/SearchBar/SearchBar";
+import { useAppSelector } from "../../utils/redux/hooks";
 
 const data = [
   {title:"ABC123", time:"18:41", price:"15,232"},
@@ -14,7 +14,7 @@ const data = [
 
 const User = () => {
 
-  const userName = useSelector((state) => state.user.username)
+  const userName = useAppSelector((state) => state.user.username)
   return (
     <div className="user">
       <div className="user-header">

@@ -3,13 +3,13 @@ import { AppDispatch } from "../../utils/redux/appStore";
 import { updateUser } from "../../utils/redux/slice/userSlice";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { useAppSelector } from "../../utils/redux/hooks";
 
 const ToggleUser = () => {
   const dispatch:AppDispatch = useDispatch()
   const navigate = useNavigate();
-  const userRole = useSelector(state => state.user.role);
+  const userRole = useAppSelector(state => state.user.role);
 
   useEffect(() => {
     if(userRole === 'admin') navigate('/admin');

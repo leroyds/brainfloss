@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import './App.css'
-import store from './utils/redux/appStore.ts';
+import {store} from './utils/redux/appStore.ts';
 import Header from './components/Header/Header.tsx';
 import { Suspense } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";

@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
 import Card from "./elements/Card.js";
 import Sales from "./elements/Sales.js";
 import Pie from "./elements/PieChart.js";
 import Chart from "./elements/Chart.js";
 import './admin.scss'
+import { useAppSelector } from "../../utils/redux/hooks.js";
 
 const Admin = () => {
 
-  const adminName = useSelector((state) => state.user.username)
+  const adminName = useAppSelector((state) => state.user.username)
   return (
     <div className="admin">
       <p>Hey Admin: {adminName}</p>
