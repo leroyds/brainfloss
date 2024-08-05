@@ -1,0 +1,14 @@
+header{
+  width: 100vw;
+  height: 80px;
+  background-color: aqua;
+  padding: 15px 20px;
+  display: flex;
+}
+
+.header-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

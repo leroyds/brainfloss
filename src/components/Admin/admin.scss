@@ -1,0 +1,26 @@
+.admin{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-dashboard{
+  &__top-row{
+    display: flex;
+    gap: 20px;
+
+    .cards_container{
+      flex-grow: 1;
+    }
+  }
+}
+
+.cards_container{
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
