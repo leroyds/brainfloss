@@ -2,9 +2,11 @@ import { Button } from "@mui/material";
 import './header.scss';
 import { useSelector } from "react-redux";
 import ToggleUser from "../ToggleUser/ToggleUser";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const userRole = useSelector((state) => state.user.role)
+  const navigate = useNavigate()
   return (
     <header>
       <div className="header-right">
@@ -20,13 +22,13 @@ const Header = () => {
       {
           userRole === 'admin' ?
             <>
-              <Button>Dashbord</Button>
-              <Button>User Mangement</Button>
+              <Button onClick={()=>navigate('/admin')}>Dashbord</Button>
+              <Button onClick={()=>navigate('/admin/management')}>User Mangement</Button>
             </>
             : 
             <>
-              <Button>Dashbord</Button>
-              <Button>Invoice</Button>
+              <Button onClick={()=>navigate('/user')}>Dashbord</Button>
+              <Button onClick={()=>navigate('/user/invoice')}>Invoice</Button>
             </>
         }
       </div>
