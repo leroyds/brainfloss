@@ -1,0 +1,24 @@
+.invoice{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .right{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.invoice-row{
+
+  &.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &.top{
+    display: flex;
+    gap: 20px;
+  }
+}

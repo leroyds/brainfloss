@@ -4,6 +4,7 @@ import Card from "../Admin/elements/Card";
 import Notifications from "../utils/Notifications";
 import InfoBar from "../utils/InfoBar/InfoBar";
 import './user.scss';
+import SearchBar from "../utils/SearchBar/SearchBar";
 
 const data = [
   {title:"ABC123", time:"18:41", price:"15,232"},
@@ -16,8 +17,9 @@ const User = () => {
   const userName = useSelector((state) => state.user.username)
   return (
     <div className="user">
-      <div>
+      <div className="user-header">
         <span>Hi {userName}</span>
+        <SearchBar/>
       </div>
       <div className="user-row top">
         <Card title='Sales' className="chart">
