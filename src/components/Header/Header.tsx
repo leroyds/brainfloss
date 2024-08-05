@@ -3,6 +3,7 @@ import './header.scss';
 import ToggleUser from "../ToggleUser/ToggleUser";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../utils/redux/hooks";
+import UserIcon from "../utils/UserInfo/UserIcon";
 
 const Header = () => {
   const userRole = useAppSelector((state) => state.user.role)
@@ -31,6 +32,7 @@ const Header = () => {
               <Button onClick={()=>navigate('/user/invoice')}>Invoice</Button>
             </>
         }
+        <UserIcon/>
       </div>
     </header>
   );
